@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Contact() {
+    useEffect(() => {
+        AOS.init();
+    }, [])
     const [formData, setFormData] = useState({
         email: "",
         name: "",
@@ -18,34 +23,34 @@ function Contact() {
         emailjs.send(
             "service_txprokj", // EmailJS Service ID
             "template_s5yu62h", // EmailJS Template ID
-            formData, 
+            formData,
             "Xf0PgVhiG3pjrCNxZ" // EmailJS Public Key
         )
-        .then(
-            (response) => {
-                console.log("SUCCESS!", response.status, response.text);
-                alert("Message sent successfully!");
-                setFormData({ email: "", name: "", message: "" });
-            },
-            (error) => {
-                console.log("FAILED...", error);
-                alert("Something went wrong!");
-            }
-        );
+            .then(
+                (response) => {
+                    console.log("SUCCESS!", response.status, response.text);
+                    alert("Message sent successfully!");
+                    setFormData({ email: "", name: "", message: "" });
+                },
+                (error) => {
+                    console.log("FAILED...", error);
+                    alert("Something went wrong!");
+                }
+            );
     };
 
     return (
         <div>
             <section className="contact-form">
                 <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                    <h2 data-aos="fade-down" data-aos-duration="2000" className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
                         Contact Me
                     </h2>
-                    <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+                    <p data-aos="fade-up" data-aos-duration="2000" className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
                         Contact me or send a message with questions and suggestions.
                     </p>
                     <form onSubmit={sendEmail} className="space-y-8">
-                        <div>
+                        <div data-aos="fade-left" data-aos-duration="2000">
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                 Your email
                             </label>
@@ -59,7 +64,7 @@ function Contact() {
                                 required
                             />
                         </div>
-                        <div>
+                        <div data-aos="fade-right" data-aos-duration="2000">
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                 Full Name
                             </label>
@@ -73,7 +78,7 @@ function Contact() {
                                 required
                             />
                         </div>
-                        <div className="sm:col-span-2">
+                        <div data-aos="fade-left" data-aos-duration="2000" className="sm:col-span-2">
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                                 Your message
                             </label>
@@ -88,6 +93,7 @@ function Contact() {
                             ></textarea>
                         </div>
                         <button
+                            data-aos="fade-up" data-aos-duration="2000"
                             type="submit"
                             className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 border"
                         >
