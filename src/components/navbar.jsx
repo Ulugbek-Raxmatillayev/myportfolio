@@ -10,12 +10,12 @@ function Navbar() {
         max-w-[1024px]:px-6 max-w-[1024px]:py-1 max-w-[1024px]:w-[90vw] 
         max-w-[768px]:flex-col max-w-[768px]:w-full max-w-[768px]:p-4 
         max-w-[640px]:text-sm max-w-[640px]:space-x-2'>
-            
+
             {/* Logo */}
             <div>
                 <Link to={'/'}>
-                    <img className='w-[50px] h-[50px] rounded-full max-w-[640px]:w-[40px] max-w-[640px]:h-[40px]' 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs0OWCsD60g34jIJKyrmKrLrHWWK3NQSWLVA&s" alt="Logo" />
+                    <img className='w-[50px] h-[50px] rounded-full max-w-[640px]:w-[40px] max-w-[640px]:h-[40px]'
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs0OWCsD60g34jIJKyrmKrLrHWWK3NQSWLVA&s" alt="Logo" />
                 </Link>
             </div>
 
@@ -35,7 +35,7 @@ function Navbar() {
                         <li className='hover:text-blue-300'><Link to={'/'} onClick={() => setIsOpen(false)}>Main</Link></li>
                         <li className='hover:text-blue-300'><Link to={'/skills'} onClick={() => setIsOpen(false)}>Skills</Link></li>
                         <li className='hover:text-blue-300'><Link to={'/projects'} onClick={() => setIsOpen(false)}>Projects</Link></li>
-                        <li className='hover:text-blue-300'><a href='myresume.html' download={'myresume.html'}>CV</a></li>
+                        <li className='hover:text-blue-300'><a href='file:///C:/Users/ADMIN/Desktop/portfolio/src/assets/My%20resume.pdf' download={'file:///C:/Users/ADMIN/Desktop/portfolio/src/assets/My%20resume.pdf'} target='blank'>CV</a></li>
                     </ol>
                 </div>
             )}
@@ -48,7 +48,8 @@ function Navbar() {
                 <li className='hover:text-blue-800'><Link to={'/'}>Main</Link></li>
                 <li className='hover:text-blue-800'><Link to={'/skills'}>Skills</Link></li>
                 <li className='hover:text-blue-800'><Link to={'/projects'}>Projects</Link></li>
-                <li className='hover:text-blue-800'><a href='myresume.html' download={'myresume.html'}>CV</a></li>
+                <li className='hover:text-blue-300'><a href='/My resume.pdf' download={'/My resume.pdf'} target='blank'>CV</a></li>
+
             </ol>
         </div>
     );
