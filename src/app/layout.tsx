@@ -13,13 +13,50 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Folio the best Portfolio or Personal Website",
+  title: "Ulug‘bek Raxmatillayev | Web Developer & IELTS Assistant",
   description:
-    "Folio is the best portfolio or personal website for developer, creator or businessman.",
+    "Ulug‘bek Raxmatillayev – zamonaviy web saytlar ishlab chiqaruvchi va IELTS test platformalari bo‘yicha mutaxassis. Veb ishlab chiqish, onlayn test tizimlari, va o‘quvchilarga xizmatlar ko‘rsatamiz.",
+  keywords: [
+    "Ulug‘bek Raxmatillayev",
+    "Web Developer Uzbekistan",
+    "IELTS Platform",
+    "IELTS Assistant",
+    "Next.js Developer",
+    "React Developer",
+    "Online Test Platform",
+    "SEO friendly web",
+  ],
+  authors: [{ name: "Ulug‘bek Raxmatillayev", url: "https://yourdomain.com" }],
+  creator: "Ulug‘bek Raxmatillayev",
   icons: {
-    icon: '/imgs/logo.png', // yoki boshqa favicon rasmingizning yo'li
-  }
+    icon: "/favicon.ico",
+  },
+  metadataBase: new URL("https://ulugbekraxmatillayev.netlify.app"),
+  openGraph: {
+    title: "Ulug‘bek Raxmatillayev | Web Developer & IELTS Assistant",
+    description:
+      "Zamonaviy veb platformalar, IELTS test tizimlari va o‘quvchilar uchun maxsus xizmatlar.",
+    url: "https://ulugbekraxmatillayev.netlify.app",
+    siteName: "Ulug‘bek Raxmatillayev Portfolio",
+    images: [
+      {
+        url: "https://ulugbekraxmatillayev.netlify.app/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Ulug‘bek Raxmatillayev - Web Developer",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ulug‘bek Raxmatillayev | Web Developer & IELTS Assistant",
+    description: "Veb ishlab chiqish va IELTS platformalari uchun ishonchli yechimlar.",
+    images: ["https://ulugbekraxmatillayev.netlify.app"],
+    creator: "@URaxmatill45627",
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -39,7 +76,7 @@ export default function RootLayout({
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://yourdomain.com" />
+        <link rel="canonical" href="https://ulugbekraxmatillayev.netlify.app" />
 
         {/* Keywords */}
         <meta
@@ -56,15 +93,15 @@ export default function RootLayout({
           property="og:description"
           content="Zamonaviy veb platformalar, IELTS test tizimlari va o‘quvchilar uchun maxsus xizmatlar."
         />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:url" content="https://ulugbekraxmatillayev.netlify.uz" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+        <meta property="og:image" content="https://ulugbekraxmatillayev.netlify.app/og-image.jpg" />
 
         {/* Twitter Meta */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Ulug‘bek Raxmatillayev | Web Developer & IELTS Assistant" />
         <meta name="twitter:description" content="Veb ishlab chiqish va IELTS platformalari uchun ishonchli yechimlar." />
-        <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://ulugbekraxmatillayev.netlify.app/og-image.jpg" />
 
         {/* Mobile Responsive */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
