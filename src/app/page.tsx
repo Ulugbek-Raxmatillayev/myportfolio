@@ -1,6 +1,7 @@
 'use client';
 
 import About from "./about/page";
+import Image from 'next/image';
 
 export default function Home() {
   const socialLinks = [
@@ -14,17 +15,19 @@ export default function Home() {
       <section className="home section" id="home">
         <div className="container">
           <div className="intro">
-            <img
+            <Image 
               src="/imgs/logo.png"
               alt="Al Siam Profile"
+              width={150}
+              height={50}
               className="shadow-dark"
             />
-            <h1>Ulug'bek Raxmatillayev</h1>
-            <p>Front End Developer</p>
+            <h1>Ulug&apos;bek Raxmatillayev</h1>
+            <p>I&apos;m a Front End Developer</p>
             <div className="social-links">
               {socialLinks && socialLinks.map((item, i) => {
                 return (
-                  <a href={item.href} target="_blank">
+                  <a key={i} href={item.href} target="_blank">
                     <i className={`fa ${item.icon}`} />
                   </a>
                 )
