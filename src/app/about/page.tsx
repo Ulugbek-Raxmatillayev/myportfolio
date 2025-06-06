@@ -53,7 +53,7 @@ const About: NextPage = () => {
                   </div>
                   <div className="row">
                     <div className="buttons padd-15">
-                      <a href="#" className="btn">Download CV</a>
+                      <a href="/docs/resume.pdf" className="btn">Download CV</a>
                       <Link
                         href="/contact"
                         data-section-index={0}
