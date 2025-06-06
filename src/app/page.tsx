@@ -1,34 +1,34 @@
+'use client';
 
-export default async function Home() {
+import About from "./about/page";
 
+export default function Home() {
+  const socialLinks = [
+    { href: "https://twitter.com/URaxmatill45627", icon: "fa-twitter" },
+    { href: "https://github.com/Ulugbek-Raxmatillayev", icon: "fa-github" },
+    { href: "https://instagram.com/ulugbekraxmatillayev__", icon: "fa-instagram" },
+    { href: "https://www.linkedin.com/in/ulug-bek-raxmatillayev-7b11b2313/", icon: "fa-linkedin" },
+  ];
   return (
     <main>
       <section className="home section" id="home">
         <div className="container">
           <div className="intro">
             <img
-              src="/imgs/alsiam.png"
+              src="/imgs/logo.png"
               alt="Al Siam Profile"
               className="shadow-dark"
             />
-            <h1>Your Name</h1>
-            <p>Your expertise</p>
+            <h1>Ulug'bek Raxmatillayev</h1>
+            <p>Front End Developer</p>
             <div className="social-links">
-              <a href="https://twitter.com/" target="_blank">
-                <i className="fa fa-twitter" />
-              </a>
-              <a href="https://facebook.com/" target="_blank">
-                <i className="fa fa-facebook" />
-              </a>
-              <a href="https://github.com/" target="_blank">
-                <i className="fa fa-github" />
-              </a>
-              <a href="https://instagram.com/" target="_blank">
-                <i className="fa fa-instagram" />
-              </a>
-              <a href="https://linkedin.com/in/" target="_blank">
-                <i className="fa fa-linkedin" />
-              </a>
+              {socialLinks && socialLinks.map((item, i) => {
+                return (
+                  <a href={item.href} target="_blank">
+                    <i className={`fa ${item.icon}`} />
+                  </a>
+                )
+              })}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-
+import Link from "next/link";
 const About: NextPage = () => {
   return (
     <main>
@@ -15,12 +15,12 @@ const About: NextPage = () => {
               <div className="row">
                 <div className="about-text padd-15">
                   <h2>
-                    I am Your name a <span>Your Expertise</span>
+                    I am Ulug'bek a <span>Front End developer</span>
                   </h2>
                   <p>
-                    Hi! My name is Your Name. I am a your expertise, and I am
+                    Hi! My name is Ulug'bek. I am a Front End developer, and I am
                     very passionate and dedicated to my work. With 1 years
-                    experience as a your expertise, I have acquired the skills and
+                    experience as a Front End developer, I have acquired the skills and
                     knowledge necessary to make your project a success. I enjoy
                     every step of the design process, from discussion and
                     collaboration.
@@ -32,12 +32,12 @@ const About: NextPage = () => {
                   <div className="row">
                     <div className="info-item padd-15">
                       <p>
-                        Website : <span>www.urfolio.vercel.app</span>
+                        Website : <span>https://ulugbekrakhmatillayev.vercel.app</span>
                       </p>
                     </div>
                     <div className="info-item padd-15">
                       <p>
-                        Email : <span>your@email.com</span>
+                        Email : <span>ulugbekraxmatillayev615@gmail.com</span>
                       </p>
                     </div>
                     <div className="info-item padd-15">
@@ -47,12 +47,12 @@ const About: NextPage = () => {
                     </div>
                     <div className="info-item padd-15">
                       <p>
-                        Phone : <span>+99 ********</span>
+                        Phone : <span>+998 88-034-09-12</span>
                       </p>
                     </div>
                     <div className="info-item padd-15">
                       <p>
-                        City : <span>Your City</span>
+                        City : <span>Uzbekistan,Qarshi</span>
                       </p>
                     </div>
                     <div className="info-item padd-15">
@@ -64,19 +64,19 @@ const About: NextPage = () => {
                   <div className="row">
                     <div className="buttons padd-15">
                       <a
-                        href="/assets/docs/resume.pdf"
+                        href="/docs/resume.pdf"
                         target="_target"
                         className="btn"
                       >
                         Download CV
                       </a>
-                      <a
-                        href="#contact"
+                      <Link
+                        href="/contact"
                         data-section-index={0}
                         className="btn hire-me"
                       >
                         Hire Me
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -123,15 +123,15 @@ const About: NextPage = () => {
                         <div className="timeline-item">
                           <div className="circle-dot" />
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar" /> 2020 to Present
+                            <i className="fa fa-calendar" /> 2024 to Present
                           </h6>
                           <h4 className="timeline-title">
                             Self Taught (Programming)
                           </h4>
                           <p className="timeline-text">
-                            Since 2020 I started to learn Programming. I have
+                            Since 2024 I started to learn Programming by myself. I have
                             learn Html, Css, Sass, JavaScript, Bootstrap. Now I
-                            am a Professional Web Designer..
+                            am a Professional Web Programmer..
                           </p>
                         </div>
                         {/* Timeline Item end */}
@@ -139,15 +139,14 @@ const About: NextPage = () => {
                         <div className="timeline-item">
                           <div className="circle-dot" />
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar" /> 2019 to Present
+                            <i className="fa fa-calendar" /> 2023 to 2024
                           </h6>
                           <h4 className="timeline-title">
-                            Diploma in Civil Engineering
+                            Sfera IT Academy
                           </h4>
                           <p className="timeline-text">
-                            From 2019 I started my journey to be a Civil
-                            Engineer on Shyamoli Ideal Polytechnic Institute. It
-                            still Running to Present.
+                            I studied at Sfera IT Academy in 2023-2024, gaining knowledge in
+                            IT security and a lot of cleaning.
                           </p>
                         </div>
                         {/* Timeline Item end */}
@@ -155,15 +154,14 @@ const About: NextPage = () => {
                         <div className="timeline-item">
                           <div className="circle-dot" />
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar" /> 2014 to 2019
+                            <i className="fa fa-calendar" /> 2016 to 2025
                           </h6>
                           <h4 className="timeline-title">
                             Secondary School Certificate
                           </h4>
                           <p className="timeline-text">
-                            In 2019 I passed SSC Exam from Science Group with
-                            GPA- 4.56. My school name was Patgram Anath Bondhu
-                            Govt. High School.
+                            In 2025 I passed SSC Exam from Science Group with
+                            GPA- 4.56. My school name was 47-school. High School.
                           </p>
                         </div>
                         {/* Timeline Item end */}
@@ -180,21 +178,7 @@ const About: NextPage = () => {
                         <div className="timeline-item">
                           <div className="circle-dot" />
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar" /> 2019 to Present
-                          </h6>
-                          <h4 className="timeline-title">Graphics Design</h4>
-                          <p className="timeline-text">
-                            From 2018 I am woking on Graphics Design. The
-                            software I use Photoshop, Illustrator for Graphics
-                            design.
-                          </p>
-                        </div>
-                        {/* Timeline Item end */}
-                        {/* Timeline Item */}
-                        <div className="timeline-item">
-                          <div className="circle-dot" />
-                          <h6 className="timeline-date">
-                            <i className="fa fa-calendar" /> 2020 to Present
+                            <i className="fa fa-calendar" /> 2023 to Present
                           </h6>
                           <h4 className="timeline-title">Web Design</h4>
                           <p className="timeline-text">
@@ -208,12 +192,28 @@ const About: NextPage = () => {
                         <div className="timeline-item">
                           <div className="circle-dot" />
                           <h6 className="timeline-date">
-                            <i className="fa fa-calendar" /> 2020 to Present
+                            <i className="fa fa-calendar" /> 2020 to 2023
+                          </h6>
+                          <h4 className="timeline-title">UI/UX Design</h4>
+                          <p className="timeline-text">
+                            I worked in the field of UI/UX Graphics Design from
+                            2020 to 2023 and completed several projects. Later,
+                            I left this field and ended my career in this field.
+                          </p>
+                        </div>
+                        {/* Timeline Item end */}
+                        {/* Timeline Item */}
+                        <div className="timeline-item">
+                          <div className="circle-dot" />
+                          <h6 className="timeline-date">
+                            <i className="fa fa-calendar" /> 2019 to 2020
                           </h6>
                           <h4 className="timeline-title">Wordpress</h4>
                           <p className="timeline-text">
-                            Since 2020 I started to learn Wordpress. I can
+                            Since 2019 I started to learn Wordpress. I can
                             install, Customize, &amp; fix bug on wordpress.{" "}
+                            But I don't work in this field now.
+
                           </p>
                         </div>
                         {/* Timeline Item end */}

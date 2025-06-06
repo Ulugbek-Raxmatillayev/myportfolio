@@ -1,8 +1,66 @@
+'use client';
+
+import { useState } from 'react';
 import type { NextPage } from "next";
+import Link from 'next/link';
+
+interface PortfolioItem {
+  id?: number;
+  type?: string;
+  title?: string;
+  category?: string;
+  image?: string;
+  link?: string | undefined;
+}
+
+const portfolioItems: PortfolioItem[] = [
+  {
+    id: 1,
+    title: "Travel site",
+    type: 'clone',
+    category: "web-design",
+    image: "/imgs/portfolio/1.jpg"
+  },
+  {
+    id: 2,
+    title: "Fast Food",
+    type: 'clone',
+    category: "web-design",
+    image: "/imgs/portfolio/2.jpg"
+  },
+  {
+    id: 3,
+    title: "Medicine Farm",
+    type: 'clone',
+    category: "web-design",
+    image: "/imgs/portfolio/3.jpg"
+  },
+  {
+    id: 4,
+    title: "IELTS Testy",
+    type: 'original',
+    category: "web-design",
+    image: "/imgs/portfolio/4.jpg",
+    link: 'https://testy.uz'
+  },
+  {
+    id: 6,
+    title: "Cuda",
+    type: 'clone',
+    category: "web-design",
+    image: "/imgs/portfolio/6.jpg"
+  }
+];
 
 const Portfolio: NextPage = () => {
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filteredItems = activeFilter === 'all'
+    ? portfolioItems
+    : portfolioItems.filter(item => item.type === activeFilter);
+
   return (
-    <div>
+    <div className="main-content">
       <section className="portfolio section" id="portfolio">
         <div className="container">
           <div className="row">
@@ -12,114 +70,47 @@ const Portfolio: NextPage = () => {
           </div>
           <div className="row">
             <div className="portfolio-filter padd-15">
-              <button type="button" className="active" data-filter="all">
+              <button
+                className={activeFilter === 'all' ? 'active' : ''}
+                onClick={() => setActiveFilter('all')}
+              >
                 All
               </button>
-              <button type="button" data-filter="graphics-design">
-                Graphics Design
+              <button
+                className={activeFilter === 'clone' ? 'active' : ''}
+                onClick={() => setActiveFilter('clone')}
+              >
+                Clones
               </button>
-              <button type="button" data-filter="web-design">
-                Web Design
-              </button>
-              <button type="button" data-filter="wordpress">
-                Wordpress
+              <button
+                className={activeFilter === 'original' ? 'active' : ''}
+                onClick={() => setActiveFilter('original')}
+              >
+                Originals
               </button>
             </div>
           </div>
           <div className="row">
-            {/* Portfolio Item */}
-            <div className="portfolio-item padd-15" data-category="web-design">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src="/imgs/portfolio/1.jpg" alt="portfolio" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Web Design</h4>
-                  <div className="icon">
-                    <i className="fa fa-search" />
+            {filteredItems.map((item) => (
+              <div className="portfolio-item padd-15" key={item.id} data-category={item.category}>
+                <div className="portfolio-item-inner shadow-dark">
+                  <div className="portfolio-img">
+                    <img src={item.image} alt={item.title} />
+                  </div>
+                  <div className="portfolio-info">
+                    <h4>{item.title}</h4>
+                    <div className="icon">
+                      <i className="fa fa-search" />
+                    </div>
+                    {item.link &&
+                      <Link href={item.link && item.link} target='blank' className="icon">
+                        <i className="fa fa-search" />
+                      </Link>
+                    }
                   </div>
                 </div>
               </div>
-            </div>
-            {/* Portfolio Item End*/}
-            {/* Portfolio Item */}
-            <div className="portfolio-item padd-15" data-category="web-design">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src="/imgs/portfolio/2.jpg" alt="portfolio" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Web Design</h4>
-                  <div className="icon">
-                    <i className="fa fa-search" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Portfolio Item End*/}
-            {/* Portfolio Item */}
-            <div className="portfolio-item padd-15" data-category="web-design">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src="/imgs/portfolio/3.jpg" alt="portfolio" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Web Design</h4>
-                  <div className="icon">
-                    <i className="fa fa-search" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Portfolio Item End*/}
-            {/* Portfolio Item */}
-            <div
-              className="portfolio-item padd-15"
-              data-category="graphics-design"
-            >
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src="/imgs/portfolio/4.jpg" alt="portfolio" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Banner Design</h4>
-                  <div className="icon">
-                    <i className="fa fa-search" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Portfolio Item End*/}
-            {/* Portfolio Item */}
-            <div className="portfolio-item padd-15" data-category="wordpress">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src="/imgs/portfolio/5.jpg" alt="portfolio" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Wordpress</h4>
-                  <div className="icon">
-                    <i className="fa fa-search" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Portfolio Item End*/}
-            {/* Portfolio Item */}
-            <div className="portfolio-item padd-15" data-category="web-design">
-              <div className="portfolio-item-inner shadow-dark">
-                <div className="portfolio-img">
-                  <img src="/imgs/portfolio/6.jpg" alt="portfolio" />
-                </div>
-                <div className="portfolio-info">
-                  <h4>Web Design</h4>
-                  <div className="icon">
-                    <i className="fa fa-search" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Portfolio Item End*/}
+            ))}
           </div>
         </div>
       </section>
